@@ -6,6 +6,7 @@ const session = require('express-session');
 
 //Initialize
 const app = express();
+require('./database');
 
 //Settings
 app.set('port', process.env.PORT || 8080);

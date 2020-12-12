@@ -1,0 +1,93 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    background: #74ebd5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+.navbar {
+    background-color: #d6ebed;
+}
+.clinica-logo img {
+    height: 110px;
+}
+.text-container {
+    margin: 0 0 30px;
+}
+.bienvenido-text {
+    color: #3A3949;
+    font-size: 62px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.subheader {
+    font-family: Source Serif Pro;
+    line-height: 1.19;	  
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.35px;
+    text-align: center;
+    color: #2d2d39;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    width: 50%;
+}
+
+.login-button {
+   display: flex;
+   justify-content: center;
+   margin-top: 30px;
+}
+.button {
+    display: flex;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #5dbcd2;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+  }
+  
+  .button span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .button:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #5dbcd2;
+    transition: all .35s;
+  }
+  
+  .button:hover{
+    color: #fff;
+  }
+  
+  .button:hover:after{
+    width: 100%;
+  }
+
+  .footer {
+    background-color: #d6ebed;
+    padding-bottom: 0;
+  }
