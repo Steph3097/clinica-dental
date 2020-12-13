@@ -10,7 +10,7 @@ router.post('/clientes/newClients', async (req, res) => {
     const {name, lastName, cedula, nacimiento} = req.body;
     const errors = [];
 
-    if({name, lastName, cedula, nacimiento}) {
+    if(!name && !lastName && !cedula && !nacimiento) {
         errors.push({text: 'Ingrese un dato valido'});
     }
     if(errors.length > 0) {
@@ -44,7 +44,7 @@ router.get('/clientes', async (req, res) => {
           })
         }
         res.render('clientes/allClients', {
- clientes: contexto.clientes }) 
+ cliente: contexto.cliente }) 
       });
   });
 
