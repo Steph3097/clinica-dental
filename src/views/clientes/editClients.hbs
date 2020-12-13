@@ -1,0 +1,21 @@
+<div class="columns">
+    <div class="column">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">Editar Usuario</p>
+            </header>
+            <div class="card-content">
+                <form action="/clientes/editClients/{{cliente.id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="_method" value="PUT">
+                    <input class="" type="text" name="name" placeholder="Nombre" value="{{cliente.name}}">
+                    <input class="" type="text" name="lastName" placeholder="Apellido" value="{{cliente.lastName}}">
+                    <input class="" type="text" name="cedula" placeholder="Cedula" value="{{cliente.cedula}}">
+                    <input class="" type="text" name="nacimiento" placeholder="Fecha de nacimiento" value="{{cliente.nacimiento}}">
+
+                    <button class="button" type="submit"><span>Guardar</span></button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

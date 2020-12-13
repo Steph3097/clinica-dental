@@ -1,8 +1,9 @@
 {
-  "name":"clinica-dental",
+  "name": "clinica-dental",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "start": "index,js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

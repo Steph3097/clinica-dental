@@ -1,0 +1,35 @@
+<div class="rows">
+    {{#each clientes}}
+    <div class="card mb-3">
+        <header class="card-header">
+            <p class="card-header-title">Informacion del cliente</p>
+        </header>
+        <div class="card-content">
+            {{ nombre }}
+            {{ apellido }}
+            {{ cedula }}
+            {{ nacimiento }}
+            <a href="/clientes/edit/{{id}}"><i class="fas fa-edit"></i></a>
+        </div>
+        <form action="/clientes/delete/{{id}}?_method=DELETE" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+            <button class="button is-danger" type="submit">Eliminar</button>
+        </form>
+    </div>
+
+      <div class="card">
+        <header class="card-header">
+            <p class="card-header-title">Agrega un usuario</p>
+            <a href="/clientes/newClients" class="button is-success">Agregar una nota</a>
+        </header>
+    </div>
+
+    {{else}}
+    <div class="card">
+        <header class="card-header">
+            <p class="card-header-title">No hay notas aun.</p>
+            <a href="/clientes/newClients" class="button is-success">Agregar una nota</a>
+        </header>
+    </div>
+    {{/each}}
+</div>
