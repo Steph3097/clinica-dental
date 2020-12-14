@@ -1,41 +1,60 @@
 const router = require('express').Router();
 
+const User = require('../models/User');
+const passport = require('passport');
+
 router.get('/users/signin', (req, res) => {
-    res.render('users/signin');
-});
-router.get('/users/signup', (req, res) => {
-    res.render('users/signup');
+  res.render('users/signin');
 });
 
-router.post('/users/signup', (req, res) => {
+router.post('/users/signin', passport.authenticate('local', {
+  successRedirect: '/clientes',
+  failureRedirect: '/users/signin',
+  failureFlash: true
+}));
+
+router.get('/users/signup', (req, res) => {
+  res.render('users/signup');
+});
+
+router.post('/users/signup', async (req, res) => {
   const { name, email, password, confirm_password } = req.body;
   const errors = [];
-  console.log(req.body);
 
-  // if(name != '') {
-  //     if (password != confirm_password) {
-  //       errors.push({ text: 'Las contrasenas no coinciden' });
-  //     }
-  
-  //     if (password.length <= 8) {
-  //       errors.push({ text: 'La contrasena debe ser mayor a 8 caracteres' });
-  //     }
-  // }
-  // else {
-  //   errors.push({text: 'Ingrese un dato valido'});
-  // }
- 
-  // if(errors.length > 0) {
-  //     res.render('users/signup', {
-  //         errors,
-  //         name,
-  //         email,
-  //         password,
-  //         confirm_password
-  //     });
-  //   }  else {
-  //       res.send('ok');
-  //     }
+  if (name.length <= 0) {
+    errors.push({ text: 'Ingrese un dato valido' });
+
+  }
+  if (password != confirm_password) {
+    errors.push({ text: 'Las contrasenas no coinciden' });
+  }
+
+  if (password.length < 8) {
+    errors.push({ text: 'La contrasena debe ser mayor a 8 caracteres' });
+  }
+
+  if (errors.length > 0) {
+    res.render('users/signup', {
+      errors,
+      name,
+      email,
+      password,
+      confirm_password
+    });
+  } else {
+    const emailUser = await User.findOne({ email: email });
+    if (emailUser) {
+      req.flash('error_msg', 'El Correo ya Esta en uso');
+      res.redirect('/users/signup');
+    } else {
+      const newUser = new User({ name, email, password });
+      newUser.password = await newUser.encryptPassword(password);
+
+      await newUser.save();
+      req.flash('success_msg', 'Ya estas registrado!');
+      res.redirect('/users/signin');
+    }
+  }
 });
 
 
