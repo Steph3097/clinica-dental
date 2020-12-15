@@ -1,0 +1,25 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="/img/logo.png" alt="Clinica dental" width="112" height="28">
+    </a>
+  </div>
+  <div class="navbar-container">
+        {{#if users}}
+   <a href="/clientes">Clientes</a>
+      <a href="/users/logout">logout</a>
+
+   {{else}}
+   <div class="button-container">
+   <a href="/users/signin" class="button button-login is-flex align-items-center"><span>Iniciar Sesion</span></a>
+   </div>
+      <div class="button-container">
+   <a href="/users/signup" class="button button-login is-flex align-items-center"><span>Registrate</span></a>
+   </div>
+    {{/if}}
+
+  </div>
+  </div>
+
+</nav>

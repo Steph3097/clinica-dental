@@ -8,26 +8,45 @@
                 <form action="/users/signup" method="POST">
                     <div class="field">
                         <div class="control">
-                        <input type="text" class=" " name="name" placeholder="Ingrese su Usuario" value="{{name}}">
+                            <input type="text" class=" " name="name" placeholder="Ingrese su Usuario" value="{{name}}">
                         </div>
                     </div>
                     <div class="field">
                         <div class="control">
-                        <input type="email" class=" " name="email" placeholder="Ingrese su Correo" value="{{email}}">
+                            <input type="email" class=" " name="email" placeholder="Ingrese su Correo"
+                                value="{{email}}">
                         </div>
                     </div>
                     <div class="field">
                         <div class="control">
-                        <input type="password" class=" " name="password" placeholder="Ingrese su Contrasena" value="{{password}}">
+                            <input type="password" class=" " name="password" placeholder="Ingrese su Contrasena"
+                                value="{{password}}">
                         </div>
                     </div>
-                      <div class="field">
+                    <div class="field">
                         <div class="control">
-                        <input type="password" class=" " name="confirm_password" placeholder="Reingrese su Contrasena" value="{{confirm_password}}">
+                            <input type="password" class=" " name="confirm_password"
+                                placeholder="Reingrese su Contrasena" value="{{confirm_password}}">
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <label class="radio">
+                                    <input type="radio" name="admin" value="Administrador">
+                                    Administrador
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="secretary" value="Secretaria">
+                                    Secretaria
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="dentist" value="Dentista">
+                                    Dentista
+                                </label>
+                            </div>
                         </div>
                     </div>
-                
-                        <button class="button is-primary" type="submit">Ingresar</button>
+
+                    <button class="button is-primary" type="submit">Ingresar</button>
                 </form>
             </div>
         </div>
