@@ -201,7 +201,18 @@ body {
     width: 100%;
   }
 
-
+  .dropdown {
+    box-shadow: 0 0 8px #777;
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 1000;
+  }
+  
+  .dropdown.is-open {
+    display: block;
+  }
   .footer p strong {
     color: #fff;
   }

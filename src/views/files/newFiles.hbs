@@ -1,0 +1,56 @@
+
+<div class="container">
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Hello</h1>
+      <form action="/files/newFiles" method="POST">
+        <select name='id_client'>
+          <option value='any'>Seleccione un cliente</option>
+          {{#each cliente}}
+          <option value="{{id}}"><span>{{name}}</span> {{lastName}}</option>
+          {{/each}}
+        </select>
+        <div class="field input-genre">
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="genre" value="Femenino">
+              Femenino
+            </label>
+            <label class="radio">
+              <input type="radio" name="genre" value="Masculino">
+              Masculino
+            </label>
+          </div>
+        </div>
+        <div class="field input-civil-status">
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="civil_status" value="Casado">
+              Casado
+            </label>
+            <label class="radio">
+              <input type="radio" name="civil_status" value="Soltero">
+              Soltero
+            </label>
+          </div>
+        </div>
+        <select name='blood_type'>
+          <option value='any'>Seleccione un tipo de sangre</option>
+          <option value='a_Positivo'>A+</option>
+          <option value='a_Negativo'>A-</option>
+          <option value='b_Positivo'>B+</option>
+          <option value='b_Negativo'>B-</option>
+          <option value='ab_Positivo'>AB+</option>
+          <option value='ab_Negativo'>AB-</option>
+          <option value='o_Positivo'>O+</option>
+          <option value='o_Negativo'>O-</option>
+        </select>
+        <button href="/" class="button"><span>Guardar</span></button>
+
+      </form>
+    </div>
+
+
+</div>
+</section>
+</div>

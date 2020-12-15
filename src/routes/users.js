@@ -18,7 +18,7 @@ router.get('/users/signup', (req, res) => {
 });
 
 router.post('/users/signup', async (req, res) => {
-  const { name, email, password, confirm_password } = req.body;
+  var { name, email, password, confirm_password, type_user } = req.body;
   const errors = [];
 
   if (name.length <= 0) {
@@ -39,7 +39,8 @@ router.post('/users/signup', async (req, res) => {
       name,
       email,
       password,
-      confirm_password
+      confirm_password,
+      type_user
     });
   } else {
     const emailUser = await User.findOne({ email: email });
@@ -47,7 +48,15 @@ router.post('/users/signup', async (req, res) => {
       req.flash('error_msg', 'El Correo ya Esta en uso');
       res.redirect('/users/signup');
     } else {
-      const newUser = new User({ name, email, password });
+      var getRadioValues = req.body.type_user;
+      if (getRadioValues === 'administrador') {
+          type_user = 'administrador';
+      } else if (getRadioValues === 'Secretaria') {
+        type_user = 'secretaria';
+      } else {
+        type_user = 'dentista';
+      }
+      const newUser = new User({ name, email, password, type_user });
       newUser.password = await newUser.encryptPassword(password);
 
       await newUser.save();
