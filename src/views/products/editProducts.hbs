@@ -1,0 +1,19 @@
+<div class="columns">
+    <div class="column">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">Editar Producto</p>
+            </header>
+            <div class="card-content">
+                <form action="/products/editProducts/{{product.id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="_method" value="PUT">
+                    <input class="" type="text" name="product" placeholder="Producto" value="{{product.product}}">
+                    <input class="" type="text" name="cantidad" placeholder="Cantidad" value="{{product.cantidad}}">
+                    <input class="" type="text" name="precio" placeholder="Precio" value="{{product.precio}}">
+                    <button class="button" type="submit"><span>Guardar</span></button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

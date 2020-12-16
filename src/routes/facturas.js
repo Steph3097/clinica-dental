@@ -1,71 +1,66 @@
 const router = require('express').Router();
 
-const File = require('../models/File');
-const Cliente = require('../models/Cliente');
+const Factura = require('../models/Factura');
+const Product = require('../models/Product');
+
 const { isAuthenticated } = require('../helpers/auth')
 
-router.get('/files/newFiles', isAuthenticated,  async (req, res) => {
-    await Cliente.find()
+router.get('/facturas/newFacturas',  async (req, res) => {
+    await Product.find()
     .then(documentos => {
       const contexto = {
-          cliente: documentos.map(documento => {
+          producto: documentos.map(documento => {
           return {
               id: documento._id,
-              name: documento.name,
-              lastName: documento.lastName,
-              cedula: documento.cedula,
-              nacimiento: documento.nacimiento,
+              product: documento.product,
+              cantidad: documento.cantidad,
+              precio: documento.precio,
           }
         })
       }
 
-      res.render('files/newFiles', {cliente: contexto.cliente });
+      res.render('facturas/newFacturas', {producto: contexto.producto });
+      console.log({producto: contexto.producto});
         });
 
 });
 
 
-router.post('/files/newFiles', isAuthenticated ,  async (req, res) => {
-    var {id_client, name, genre, civil_status, blood_type} = req.body;
+router.post('/facturas/newFacturas', isAuthenticated ,  async (req, res) => {
+    var facturas = new Factura();
+    var {id_producto, nombre_producto, cantidad_producto, subtotal, total} = req.body;
     const errors = [];
-    const idCliente = req.body.id_client;
-    const nombre = await Cliente.findById(idCliente)
-  if (nombre) {
-      name= nombre.name +' '+ nombre.lastName;
+    facturas.id_producto = [];
+    const producto = await Product.findById(id_producto);
+
+    if (!id_producto && !nombre_producto && !cantidad_producto && !subtotal && !total ) {
+        errors.push({text: 'Ingrese un dato valido'})
+    }
+  if (producto) {
+      nombre_producto = producto.name;
+      cantidad_producto = parseInt(req.body.cantidad_producto);
+
+      var calculoSubtotal = producto.precio * cantidad_producto;
+    
+      subtotal = calculoSubtotal;
+      var calculoImpuesto = (subtotal * 0.13) + subtotal;
+      total = calculoImpuesto;
   }
 
-
-
-    if(idCliente === 'any') {
-        errors.push({text: 'Ingrese un cliente valido'});
-    }
-    var getRadioValuesGenre = req.body.genre;
-    if (getRadioValuesGenre === 'Femenino') {
-        type_user = 'Femenino';
-    } else {
-      type_user = 'Masculino';
-    }
-
-    var getRadioValuesCivilStatus = req.body.civil_status;
-    if (getRadioValuesCivilStatus === 'Casado') {
-        type_user = 'Casado';
-    } else {
-      type_user = 'Soltero';
-    }
-
     if(errors.length > 0) {
-        res.render('files/newFiles', {
+        res.render('facturas/newFacturas', {
             errors,
-            name,
-            genre,
-            civil_status,
-            blood_type
+            id_producto,
+            nombre_producto,
+            cantidad_producto,
+            subtotal,
+            total
         });
     } else {
-       const newFile = new File({id_client,name, genre, civil_status, blood_type});
-       await newFile.save();
-       req.flash('success_msg', 'Cliente agregado satisfactoriamente');
-       res.redirect('/files')
+       const newFactura = new Factura({id_producto, nombre_producto, cantidad_producto, subtotal, total});
+       await newFactura.save();
+       req.flash('success_msg', 'Factura agregado satisfactoriamente');
+       res.redirect('/facturas')
     }
 });
 

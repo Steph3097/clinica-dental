@@ -197,8 +197,8 @@ body {
     color: #fff;
     padding: 3rem 1.5rem 3rem;
     position: absolute;
-    top: 83%;
     width: 100%;
+    min-height: calc(100vh - 476px);
   }
 
   .dropdown {

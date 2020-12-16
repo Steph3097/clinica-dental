@@ -43,12 +43,13 @@ app.use((req, res, next) => {
 
   next();
 });
-app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 //Routes
 app.use(require('./routes/index'));
 app.use(require('./routes/clientes'));
 app.use(require('./routes/users'));
 app.use(require('./routes/files'));
+app.use(require('./routes/products'));
+app.use(require('./routes/facturas'));
 
 
 //Static files

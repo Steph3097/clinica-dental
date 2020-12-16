@@ -1,29 +1,28 @@
 <div class="columns">
     <div class="column">
-    {{#each file}}
+    {{#each product}}
     <div class="card mb-3">
         <header class="card-header">
-            <p class="card-header-title">Informacion de los expedientes</p>
+            <p class="card-header-title">Informacion de los Productos</p>
         </header>
         <div class="card-content">
             <table>
                 <tr>
-                    <th>Nombre Cliente</th>
-                    <th>Genero</th>
-                    <th>Estado Civil</th>
-                    <th>Tipo de sangre</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
                     <th>Editar</th>
+
                 </tr>
                 <tr>
-                    <td>{{ name }}</td>
-                    <td>{{ genre }}</td>
-                    <td>{{ civil_status }}</td>
-                    <td>{{ blood_type }}</td>
-                    <td><a href="/files/edit/{{id}}"><i class="fas fa-edit"></i></a></td>
+                    <td>{{ product }}</td>
+                    <td>{{ cantidad }}</td>
+                    <td>{{ precio }}</td>
+                    <td><a href="/products/edit/{{id}}"><i class="fas fa-edit"></i></a></td>
                 </tr>
             </table>
         </div>
-        <form action="/files/delete/{{id}}?_method=DELETE" method="POST">
+        <form action="/products/delete/{{id}}?_method=DELETE" method="POST">
         <input type="hidden" name="_method" value="DELETE">
             <button class="button is-danger" type="submit">Eliminar</button>
         </form>
@@ -39,8 +38,8 @@
     
      <div class="card">
         <header class="card-header">
-            <p class="card-header-title">Agrega un usuario</p>
-            <a href="/files/newFiles" class="button is-success">Agregar una nota</a>
+            <p class="card-header-title">Agrega un Producto</p>
+            <a href="/products/newProducts" class="button is-success">Agregar una nota</a>
         </header>
     </div>
     </div>
