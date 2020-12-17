@@ -346,10 +346,40 @@ body {
     border-color: #00d1b2;
     border-radius: 4px;
   }
-  
-  .dropdown.is-open {
-    display: block;
+
+  .navbar-start {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+    color: #000;
   }
+
+  @media (max-width: 767px) {
+    .navbar-brand {
+      justify-content: center;
+    }
+    .button-container {
+      margin-bottom: 20px;
+    }
+    .welcome-container img {
+      height: 170px;
+      width: 360px;
+    }
+    .welcome-text {
+      font-size: 32px !important;
+      width: 100%;
+    }
+    .card {
+      margin: 0;
+      width: 100%;
+    }
+    .navbar-container {
+      justify-content: center;
+    }
+  }
+  
+
   .footer p strong {
     color: #fff;
   }
