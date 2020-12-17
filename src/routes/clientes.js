@@ -56,10 +56,10 @@ router.get('/clientes', isAuthenticated,  async (req, res) => {
     const cliente = await Cliente.findById(req.params.id)
     .then(data =>{
         return {
-            name: documento.name,
-            lastName: documento.lastName,
-            cedula: documento.cedula,
-            nacimiento: documento.nacimiento,
+            name: data.name,
+            lastName: data.lastName,
+            cedula: data.cedula,
+            nacimiento: data.nacimiento,
             id:data.id
         }
     })

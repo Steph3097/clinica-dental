@@ -8,7 +8,7 @@ router.get('/users/signin', (req, res) => {
 });
 
 router.post('/users/signin', passport.authenticate('local', {
-  successRedirect: '/clientes',
+  successRedirect: '/bienvenida/welcome',
   failureRedirect: '/users/signin',
   failureFlash: true
 }));

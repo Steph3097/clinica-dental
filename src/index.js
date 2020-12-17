@@ -50,6 +50,10 @@ app.use(require('./routes/users'));
 app.use(require('./routes/files'));
 app.use(require('./routes/products'));
 app.use(require('./routes/facturas'));
+app.use(require('./routes/citas'));
+
+app.use(require('./routes/bienvenida'));
+
 
 
 //Static files

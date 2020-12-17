@@ -1,15 +1,40 @@
-<div class="container">
-    <h3>Registra un producto</h3>
-    <div class="form">
+
+<div class="column">
+  <div class="columns card-column">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">Registro de productos</p>
+      </header>
+      <div class="card-content">
         <form action="/products/newProducts" method="POST">
-        <div>
-            <input type="text" name="product" placeholder="Inserte su Producto" autofocus>
-            <input type="number" name="cantidad" placeholder="Inserte la cantidad" >
-            <input type="number" name="precio" placeholder="Inserte el precio" >
-             <div class="login-button">
-            <button href="/" class="button"><span>Continuar</span></button>
+          <div class="field">
+            <div class="control">
+              <p>Producto:</p>
+            <input type="text" class="input is-primary" name="product" placeholder="Inserte su Producto" autofocus>
+            </div>
           </div>
-        </div>
+          <div class="field">
+            <div class="control">
+              <p>Cantidad del producto:</p>
+
+            <input type="number" class="input is-primary" name="cantidad" placeholder="Inserte la cantidad" >
+            </div>
+          </div>
+          <div class="field">
+                          <p>Precio del producto:</p>
+
+            <div class="control">
+
+            <input type="number" class="input is-primary" name="precio" placeholder="Inserte el precio" >
+            </div>
+          </div>
+  <div class="field button-field mt-5">
+            <button class="button-loading" type="submit">Guardar</button>
+            </div>
         </form>
+      </div>
     </div>
+  </div>
+
 </div>
+

@@ -1,7 +1,13 @@
 <div class="columns">
     <div class="column">
+             <div class="card add-card mt-6">
+        <header class="card-header">
+            <p class="card-header-title">Agrega un usuario</p>
+                                    <a href="/files/newFiles" class="button button-login mr-3"><span>Agregar</span></a>
+        </header>
+    </div>
     {{#each file}}
-    <div class="card mb-3">
+    <div class="card pb-5 mt-6">
         <header class="card-header">
             <p class="card-header-title">Informacion de los expedientes</p>
         </header>
@@ -25,24 +31,13 @@
         </div>
         <form action="/files/delete/{{id}}?_method=DELETE" method="POST">
         <input type="hidden" name="_method" value="DELETE">
-            <button class="button is-danger" type="submit">Eliminar</button>
-        </form>
-    </div>
-    {{else}}
-    <div class="card">
-        <header class="card-header">
-            <p class="card-header-title">No hay Expedientes aun.</p>
-            <a href="/files/newFiles" class="button is-success">Agregar un expediente</a>
-        </header>
+ <div class="button-delete-container">
+            <button class="button-delete mb-5" type="submit"><span>Eliminar</span></button>
+            </div>        </form>
     </div>
     {{/each}}
     
-     <div class="card">
-        <header class="card-header">
-            <p class="card-header-title">Agrega un usuario</p>
-            <a href="/files/newFiles" class="button is-success">Agregar una nota</a>
-        </header>
-    </div>
+
     </div>
 
 </div>

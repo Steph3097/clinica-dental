@@ -89,38 +89,23 @@ router.get('/files', isAuthenticated,  async (req, res) => {
   });
 
   router.get('/files/edit/:id', isAuthenticated,   async (req, res) => {
-    await Cliente.find()
-    .then(documentos => {
-      const contexto = {
-          cliente: documentos.map(documento => {
-          return {
-              id: documento._id,
-              name: documento.name,
-              lastName: documento.lastName,
-              cedula: documento.cedula,
-              nacimiento: documento.nacimiento,
-          }
-        })
-      }
-
-      res.render('files/editFiles', {cliente: contexto.cliente });
-        });
     const file = await File.findById(req.params.id)
-    .then(data =>{
-        return {
-            name: data.name,
-            genre: data.genre,
-            civil_status: data.civil_status,
-            blood_type: data.blood_type,
-            id:data.id
-        }
-    });
-    res.render('files/editFiles',{file});
+      .then(data =>{
+          return {
+              name: data.name,
+              genre: data.genre,
+              civil_status: data.civil_status,
+              blood_type: data.blood_type,
+              id:data.id
+          }
+      });
+      res.render('files/editFiles',{file});
+
 });
 
 router.put('/files/editFiles/:id', isAuthenticated,  async (req, res) =>{
-    const {name, genre, civil_status, blood_type} = req.body;
-     await File.findByIdAndUpdate(req.params.id,{name, genre, civil_status, blood_type, id});
+    const {genre, civil_status, blood_type} = req.body;
+     await File.findByIdAndUpdate(req.params.id,{genre, civil_status, blood_type});
      req.flash('success_msg', 'Cliente actualizado Satisfactoriamente');
      res.redirect('/files');
 });

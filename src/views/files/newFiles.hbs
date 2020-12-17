@@ -1,17 +1,21 @@
 
-<div class="container">
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Crear un expediente</h1>
+<div class="column">
+  <div class="columns card-column">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">Registro de Expedientes</p>
+      </header>
+      <div class="card-content">
       <form action="/files/newFiles" method="POST">
-        <select name='id_client'>
+        <select name='id_client' class="blood-type-select select is-primary">
           <option value='any'>Seleccione un cliente</option>
           {{#each cliente}}
           <option value="{{id}}"><span>{{name}}</span> {{lastName}}</option>
           {{/each}}
         </select>
-        <div class="field input-genre">
+       <div class="field input-genre">
           <div class="control">
+            <p>Seleccione un genero:</p>
             <label class="radio">
               <input type="radio" name="genre" value="Femenino">
               Femenino
@@ -22,8 +26,9 @@
             </label>
           </div>
         </div>
-        <div class="field input-civil-status">
+           <div class="field input-civil-status">
           <div class="control">
+            <p>Seleccione un estado Civil:</p>
             <label class="radio">
               <input type="radio" name="civil_status" value="Casado">
               Casado
@@ -34,7 +39,7 @@
             </label>
           </div>
         </div>
-        <select name='blood_type'>
+    <select name='blood_type' class="blood-type-select select is-primary">
           <option value='any'>Seleccione un tipo de sangre</option>
           <option value='A+'>A+</option>
           <option value='A-'>A-</option>
@@ -45,12 +50,12 @@
           <option value='O+'>O+</option>
           <option value='O-'>O-</option>
         </select>
-        <button href="/" class="button"><span>Guardar</span></button>
-
+ <div class="field button-field mt-5">
+            <button class="button-loading" type="submit">Guardar</button>
+          </div>
       </form>
+      </div>
     </div>
+  </div>
 
-
-</div>
-</section>
 </div>

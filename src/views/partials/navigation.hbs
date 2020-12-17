@@ -1,28 +1,30 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="container">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <img src="/img/logo.png" alt="Clinica dental" width="112" height="28">
-    </a>
-  </div>
-  <div class="navbar-container">
-        {{#if users}}
-   <a href="/clientes">Clientes</a>
-   <a href="/files">Expedientes</a>
-         <a href="/products">Productos</a>
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/img/logo.png" alt="Clinica dental" width="112" height="28">
+      </a>
+    </div>
+    <div class="navbar-container">
+      {{#if users}}
+      <a class="button button-login mr-3" href="/clientes"><span>Clientes</span></a>
+      <a class="button button-login mr-3" href="/files"><span>Expedientes</span></a>
+      <a class="button button-login mr-3" href="/products"><span>Productos</span></a>
+      <a class="button button-login mr-3" href="/citas"><span>Citas</span></a>
 
-      <a href="/users/logout">logout</a>
+      <a class="button button-login mr-3" href="/users/logout"><span>Cerrar sesión</span></a>
 
-   {{else}}
-   <div class="button-container">
-   <a href="/users/signin" class="button button-login is-flex align-items-center"><span>Iniciar Sesion</span></a>
-   </div>
+      {{else}}
       <div class="button-container">
-   <a href="/users/signup" class="button button-login is-flex align-items-center"><span>Registrate</span></a>
-   </div>
-    {{/if}}
+        <a href="/users/signin" class="button button-login is-flex align-items-center mr-3"><span>Iniciar
+            sesión</span></a>
+      </div>
+      <div class="button-container">
+        <a href="/users/signup" class="button button-login is-flex align-items-center"><span>Registrate</span></a>
+      </div>
+      {{/if}}
 
-  </div>
+    </div>
   </div>
 
 </nav>

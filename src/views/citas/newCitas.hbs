@@ -1,0 +1,44 @@
+
+<div class="column">
+  <div class="columns card-column">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">Registro de Expedientes</p>
+      </header>
+      <div class="card-content">
+      <form action="/citas/newCitas" method="POST">
+        <select name='id_client' class="blood-type-select select is-primary">
+          <option value='any'>Seleccione un cliente</option>
+          {{#each cliente}}
+          <option name="name"value="{{id}}"><span>{{name}}</span> {{lastName}}</option>
+          {{/each}}
+        </select>
+       <div class="field">
+           <p>Fecha:</p>
+              <input type="datetime-local" class="input is-primary" name="fecha" id="date" placeholder="Fecha de Cita" maxlength="10" autofocus>
+
+        </div>
+           <div class="field">
+          <div class="control">
+           <p>Odontologo:</p>
+                         <input type="text" class="input is-primary" name="odontologo" placeholder="Inserte el odontologo" autofocus>
+
+          </div>
+        </div>
+              <div class="field input-civil-status">
+          <div class="control">
+           <p>Detalle:</p>
+                         <textarea type="text" class="input is-primary" name="detalle" placeholder="Inserte el detalle" autofocus></textarea>
+
+          </div>
+        </div>
+
+ <div class="field button-field mt-5">
+            <button class="button-loading" type="submit">Guardar</button>
+          </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+</div>

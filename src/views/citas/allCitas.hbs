@@ -1,38 +1,38 @@
 <div class="rows">
   <div class="card add-card mt-6">
     <header class="card-header">
-      <p class="card-header-title">Agrega un Cliente</p>
-      <a href="/clientes/newClients" class="button button-login mr-3"><span>Agregar</span></a>
+      <p class="card-header-title">Agrega un Cita</p>
+      <a href="/citas/newCitas" class="button button-login mr-3"><span>Agregar</span></a>
 
     </header>
 
   </div>
-  {{#each cliente}}
+  {{#each citas}}
   <div class="card pb-5 mt-6">
 
     <header class="card-header">
-      <p class="card-header-title">Información del cliente</p>
+      <p class="card-header-title">Información de citas</p>
     </header>
     <div class="card-content">
       <table>
         <tr>
           <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Cédula </th>
-          <th>Fecha de nacimiento</th>
+          <th>Fecha</th>
+          <th>Odontologo </th>
+          <th>Detalle</th>
           <th>Editar</th>
         </tr>
         <tr>
           <td>{{ name }}</td>
-          <td>{{ lastName }}</td>
-          <td>{{ cedula }}</td>
-          <td>{{ nacimiento }}</td>
-          <td><a href="/clientes/edit/{{id}}"><i class="fas fa-edit"></i></a></td>
+          <td>{{ fecha }}</td>
+          <td>{{ odontologo }}</td>
+          <td>{{ detalle }}</td>
+          <td><a href="/citas/edit/{{id}}"><i class="fas fa-edit"></i></a></td>
         </tr>
       </table>
 
     </div>
-    <form action="/clientes/delete/{{id}}?_method=DELETE" method="POST">
+    <form action="/citas/delete/{{id}}?_method=DELETE" method="POST">
       <input type="hidden" name="_method" value="DELETE">
       <div class="button-delete-container">
         <button class="button-delete mb-5" type="submit"><span>Eliminar</span></button>
