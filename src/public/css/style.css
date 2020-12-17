@@ -1,0 +1,385 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+:root {
+  --light: #92DE34;
+  --dark: #69BC22;
+  --text: #025600;
+}
+
+body {
+
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    background: #56ab2f;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.content-container {
+  position: relative;
+  min-height: 100vh;
+  margin-bottom: 20px !important;
+ 
+}
+.navbar {
+    background-color: #d6ebed;
+}
+.clinica-logo img {
+    height: 110px;
+}
+.text-container {
+    margin: 0 0 30px;
+}
+.bienvenido-text {
+    color: #3A3949;
+    font-size: 62px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.subheader {
+    font-family: Source Serif Pro;
+    line-height: 1.19;	  
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.35px;
+    text-align: center;
+    color: #2d2d39;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    width: 50%;
+}
+
+.login-button {
+   display: flex;
+   justify-content: center;
+   margin-top: 30px;
+}
+.button {
+    display: flex;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #326ba8 !important;
+    border: 2px solid #85C872 !important;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+  }
+  
+  .button span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .button:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #85C872;
+    transition: all .35s;
+  }
+  
+  .button:hover{
+    color: #fff !important;
+  }
+  
+  .button:hover:after{
+    width: 100%;
+  }
+  .button-delete-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .button-delete {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #000 !important;
+    border: 2px solid #f14668  !important;
+    background-color: #fff;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+  }
+  
+  .button-delete span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .button-delete:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #f14668;
+    transition: all .35s;
+  }
+  
+  .button-delete:hover{
+    color: #fff !important;
+  }
+  
+  .button-delete:hover:after{
+    width: 100%;
+  }
+  .navbar .container {
+    justify-content: space-between;
+    align-items: center !important;
+  }
+
+  .navbar-container {
+    display: flex;
+  }
+  
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-item img {
+    max-height: 4.75rem !important;
+  }
+
+  .welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .welcome-container img {
+    height: 200px;
+  }
+
+  .welcome-text {
+    font-size: 54px;
+    width: 38%;
+    text-align: center;
+  }
+  h1 {
+    font-size: 30px !important;
+    text-align: center;
+  }
+
+  .signin-column {
+    flex-direction: column;
+    padding-top: 60px !important;
+  }
+
+  .signin-form {
+    margin: 20px auto;
+  }
+  .button-submit-container {
+    display: flex;
+    justify-content: center;
+  }
+  .button-loading {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    border-radius: 4px;
+    font-family: sans-serif;
+    text-decoration: none;
+    text-decoration: none;
+    border: 1px solid rgba(133, 200, 114, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .button-loading:hover {
+    box-shadow: 1px 1px 25px 10px rgba(133, 200, 114, 1);
+  }
+  
+  .button-loading:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(133, 200, 114, 1),
+      transparent
+    );
+    transition: all 650ms;
+  }
+  
+  .button-loading:hover:before {
+    left: 100%;
+  }
+
+  .footer {
+    background-color: #282828 !important;
+    color: #fff;
+    padding: 3rem 1.5rem 3rem;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem; 
+  }
+
+  .dropdown {
+    box-shadow: 0 0 8px #777;
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 1000;
+  }
+
+  .card {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .card-column {
+   justify-content: center;
+   margin: 50px 0 50px !important;
+  }
+
+  .card-header-title {
+    font-size: 30px;
+  }
+  .add-card .card-header {
+    align-items: center;
+  }
+
+  .field-userType,
+  .button-field {
+    display: flex;
+    justify-content: center;
+  }
+  .field-userType p {
+    text-align: center;
+  }
+
+  .no-registrado-link {
+    text-align: center;
+    color: #000;
+  }
+
+  .no-registrado-link:hover {
+    text-decoration: underline;
+  }
+
+  .opciones-menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .link-loading {
+    text-align: center;
+  }
+
+  .card-bienvenida {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .menu-options {
+    font-size: 26px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center !important;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .input-genre,
+  .input-civil-status {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-color: #00d1b2;
+    border: 1px solid transparent;
+  }
+
+  .blood-type-select {
+    width: 100%;
+    border-color: #00d1b2;
+    border-radius: 4px;
+  }
+
+  .navbar-start {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+    color: #000;
+  }
+
+  @media (max-width: 767px) {
+    .navbar-brand {
+      justify-content: center;
+    }
+    .button-container {
+      margin-bottom: 20px;
+    }
+    .welcome-container img {
+      height: 170px;
+      width: 360px;
+    }
+    .welcome-text {
+      font-size: 32px !important;
+      width: 100%;
+    }
+    .card {
+      margin: 0;
+      width: 100%;
+    }
+    .navbar-container {
+      justify-content: center;
+    }
+  }
+  
+
+  .footer p strong {
+    color: #fff;
+  }

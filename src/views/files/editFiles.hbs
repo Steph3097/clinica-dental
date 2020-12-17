@@ -1,0 +1,58 @@
+<div class="column">
+  <div class="columns card-column">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">Editar Expediente</p>
+      </header>
+      <div class="card-content">
+      <form action="/files/editFiles/{{file.id}}?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <p>Nombre:</p>
+<input type="text" class="input is-primary" name="name" value="{{file.name}}" disabled>
+        <div class="field input-genre">
+          <div class="control">
+            <p>Seleccione un genero:</p>
+            <label class="radio">
+              <input type="radio" name="genre" value="Femenino">
+              Femenino
+            </label>
+            <label class="radio">
+              <input type="radio" name="genre" value="Masculino">
+              Masculino
+            </label>
+          </div>
+        </div>
+        <div class="field input-civil-status">
+          <div class="control">
+            <p>Seleccione un estado Civil:</p>
+            <label class="radio">
+              <input type="radio" name="civil_status" value="Casado">
+              Casado
+            </label>
+            <label class="radio">
+              <input type="radio" name="civil_status" value="Soltero">
+              Soltero
+            </label>
+          </div>
+        </div>
+      
+        <select name='blood_type' class="blood-type-select select is-primary">
+          <option value='any'>Seleccione un tipo de sangre</option>
+          <option value='A+'>A+</option>
+          <option value='A-'>A-</option>
+          <option value='B+'>B+</option>
+          <option value='B-'>B-</option>
+          <option value='AB+'>AB+</option>
+          <option value='AB-'>AB-</option>
+          <option value='O+'>O+</option>
+          <option value='O-'>O-</option>
+        </select>
+          <div class="field button-field mt-5">
+            <button class="button-loading" type="submit">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

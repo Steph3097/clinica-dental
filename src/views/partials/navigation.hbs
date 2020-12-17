@@ -1,0 +1,61 @@
+<script>
+  $(document).ready(function() {
+  $(".navbar-burger").click(function() {
+      $(".navbar-burger, .navbar-menu", $(this).closest('.navbar')).toggleClass("is-active");
+  });
+});
+</script>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/img/logo.png" alt="Clinica dental" width="112" height="28">
+      </a>
+    </div>
+    <div class="navbar-container">
+      {{#if users}}
+      <a class="button button-login mr-3 is-hidden-touch" href="/clientes"><span>Clientes</span></a>
+      <a class="button button-login mr-3 is-hidden-touch" href="/files"><span>Expedientes</span></a>
+      <a class="button button-login mr-3 is-hidden-touch" href="/products"><span>Productos</span></a>
+      <a class="button button-login mr-3 is-hidden-touch" href="/citas"><span>Citas</span></a>
+     <div class="button-container">
+      <a class="button button-login mr-3 is-hidden-touch" href="/users/logout"><span>Cerrar sesión</span></a>
+</div>
+<div class="hamburger-menu is-hidden-desktop"></div>
+   <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
+                            </a>
+                        </div>
+                        <div id="navbarBasicExample" class="navbar-menu">
+                            <div class="navbar-start">
+      <a class="mr-3" href="/clientes"><span>Clientes</span></a>
+      <hr>
+      <a class="mr-3" href="/files"><span>Expedientes</span></a>
+            <hr>
+
+      <a class="mr-3" href="/products"><span>Productos</span></a>
+            <hr>
+
+            <a class="mr-3" href="/citas"><span>Citas</span></a>
+                  <hr>
+
+                  <a class="mr-3" href="/users/logout"><span>Cerrar sesión</span></a>
+
+
+                            </div>
+      {{else}}
+      <div class="button-container">
+        <a href="/users/signin" class="button button-login is-flex align-items-center mr-3"><span>Iniciar
+            sesión</span></a>
+      </div>
+      <div class="button-container">
+        <a href="/users/signup" class="button button-login is-flex align-items-center"><span>Registrate</span></a>
+      </div>
+      {{/if}}
+
+    </div>
+  </div>
+
+</nav>

@@ -1,0 +1,35 @@
+<script>
+
+</script>
+<div class="container">
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Crear un expediente</h1>
+            <form action="/facturas/newFacturas" method="POST">
+              {{#each producto}}
+                <table>
+                    <tr>
+                        <th>Seleccionar</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                    </tr>
+                
+              
+                <tr>
+                    <td><input type="checkbox" value="{{id}}"></td>
+                    <td>{{product}}</td>
+                    <td>{{precio}}</td>
+\                </tr>
+</table>
+                {{/each}}
+
+                <input type="number" value="cantidad_producto" placeholder="Cantidad del producto">
+                <button href="/" class="button"><span>Guardar</span></button>
+
+            </form>
+        </div>
+
+
+</div>
+</section>
+</div>

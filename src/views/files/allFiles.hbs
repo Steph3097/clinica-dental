@@ -1,0 +1,43 @@
+<div class="columns">
+    <div class="column">
+             <div class="card add-card mt-6">
+        <header class="card-header">
+            <p class="card-header-title">Agrega un Expediente</p>
+                                    <a href="/files/newFiles" class="button button-login mr-3"><span>Agregar</span></a>
+        </header>
+    </div>
+    {{#each file}}
+    <div class="card pb-5 mt-6">
+        <header class="card-header">
+            <p class="card-header-title">Informacion de los expedientes</p>
+        </header>
+        <div class="card-content">
+            <table>
+                <tr>
+                    <th>Nombre Cliente</th>
+                    <th>Genero</th>
+                    <th>Estado Civil</th>
+                    <th>Tipo de sangre</th>
+                    <th>Editar</th>
+                </tr>
+                <tr>
+                    <td>{{ name }}</td>
+                    <td>{{ genre }}</td>
+                    <td>{{ civil_status }}</td>
+                    <td>{{ blood_type }}</td>
+                    <td><a href="/files/edit/{{id}}"><i class="fas fa-edit"></i></a></td>
+                </tr>
+            </table>
+        </div>
+        <form action="/files/delete/{{id}}?_method=DELETE" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+ <div class="button-delete-container">
+            <button class="button-delete mb-5" type="submit"><span>Eliminar</span></button>
+            </div>        </form>
+    </div>
+    {{/each}}
+    
+
+    </div>
+
+</div>

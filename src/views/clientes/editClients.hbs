@@ -1,0 +1,48 @@
+<div class="column">
+  <div class="columns card-column">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">Editar Cliente</p>
+      </header>
+      <div class="card-content">
+        <form action="/clientes/editClients/{{cliente.id}}?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+
+          <div class="field">
+            <div class="control">
+              <p>Nombre:</p>
+              <input type="text" class="input is-primary" name="name" placeholder="Inserte su nombre" value="{{cliente.name}}" autofocus>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <p>Apellido:</p>
+
+              <input type="text" class="input is-primary" name="lastName" placeholder="Inserte su Apellido" value="{{cliente.lastName}}" autofocus>
+            </div>
+          </div>
+          <div class="field">
+            <p>Cédula:</p>
+
+            <div class="control">
+
+              <input type="number" class="input is-primary" name="cedula" placeholder="Inserte su Cedula" maxlength="9" value="{{cliente.cedula}}" autofocus>
+            </div>
+          </div>
+          <div class="field">
+            <p>Fecha de nacimiento:</p>
+
+            <div class="control">
+
+              <input type="date" class="input is-primary" name="nacimiento" id="date" placeholder="Fecha de nacimiento" maxlength="10" value="{{nacimiento}}" autofocus>
+            </div>
+          </div>
+          <div class="field button-field mt-5">
+            <button class="button-loading" type="submit">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

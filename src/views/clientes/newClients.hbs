@@ -1,0 +1,46 @@
+<div class="column">
+  <div class="columns card-column">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">Registro de clientes</p>
+      </header>
+      <div class="card-content">
+        <form action="/clientes/newClients" method="POST">
+          <div class="field">
+            <div class="control">
+              <p>Nombre:</p>
+              <input type="text" class="input is-primary" name="name" placeholder="Inserte su nombre" autofocus>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <p>Apellido:</p>
+
+              <input type="text" class="input is-primary" name="lastName" placeholder="Inserte su Apellido" autofocus>
+            </div>
+          </div>
+          <div class="field">
+            <p>Cédula:</p>
+
+            <div class="control">
+
+              <input type="number" class="input is-primary" name="cedula" placeholder="Inserte su Cedula" autofocus>
+            </div>
+          </div>
+          <div class="field">
+            <p>Fecha de nacimiento:</p>
+
+            <div class="control">
+
+              <input type="date" class="input is-primary" name="nacimiento" id="date" placeholder="Fecha de nacimiento" maxlength="10" autofocus>
+            </div>
+          </div>
+          <div class="field button-field mt-5">
+            <button class="button-loading" type="submit">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,41 @@
+<div class="columns">
+    <div class="column">
+          <div class="card add-card mt-6">
+    <header class="card-header">
+      <p class="card-header-title">Agrega un producto</p>
+      <a href="/products/newProducts" class="button button-login mr-3"><span>Agregar</span></a>
+      </div>
+
+    {{#each product}}
+    <div class="card pb-5 mt-6">
+        <header class="card-header">
+            <p class="card-header-title">Informacion de los Productos</p>
+        </header>
+        <div class="card-content">
+            <table>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Editar</th>
+
+                </tr>
+                <tr>
+                    <td>{{ product }}</td>
+                    <td>{{ cantidad }}</td>
+                    <td>{{ precio }}</td>
+                    <td><a href="/products/edit/{{id}}"><i class="fas fa-edit"></i></a></td>
+                </tr>
+            </table>
+        </div>
+        <form action="/products/delete/{{id}}?_method=DELETE" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+ <div class="button-delete-container">
+        <button class="button-delete mb-5" type="submit"><span>Eliminar</span></button>
+      </div>        
+      </form>
+    </div>
+    {{/each}}
+
+
+</div>
